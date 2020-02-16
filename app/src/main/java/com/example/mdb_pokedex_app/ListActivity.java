@@ -61,13 +61,11 @@ public class ListActivity extends AppCompatActivity {
             Pokemon pokemon_object = new Pokemon(currName, pokemonJsonObject);
             if (pokemon_object.getPoke_attack() >= atk && pokemon_object.getPoke_defense() >= def
                     && pokemon_object.getPoke_hp() >= hp) {
-                System.out.println(poke_types);
-                if (poke_types == null) {
+                if (poke_types == null || poke_types[0] == null) {
                     pokeNames.add(pokemon_object);
                 } else {
                     boolean maybe = true;
                     for(int i = 0; i < pokemon_object.getPoke_types().size(); i++) {
-                        System.out.println(pokemon_object.getPoke_name() + " " + pokemon_object.getPoke_types() + " " + poke_types[i] + " " + pokemon_object.getPoke_types().contains(poke_types[i]));
                         if(!pokemon_object.getPoke_types().contains(poke_types[i])) {
                             maybe = false;
                         }
