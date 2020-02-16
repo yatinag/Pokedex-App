@@ -1,0 +1,11 @@
+<resources>
+    <!-- Custom strings -->
+    <string name="app_name">MDB-Pokedex-App</string>
+    <string name="find_pokemon">Find Pokemon by name</string>
+    <string name="pokemon_name">Pokemon Name</string>
+    <string name="filter_category">Filter Pokemon by type</string>
+    <string name="filter_range">Filter Pokemon by range</string>
+    <string name="attack_msg">Attack ></string>
+    <string name="defense_msg">Defense ></string>
+    <string name="health_msg">Health ></string>
+</resources>
