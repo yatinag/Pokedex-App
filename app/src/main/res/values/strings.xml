@@ -8,4 +8,5 @@
     <string name="attack_msg">Attack ></string>
     <string name="defense_msg">Defense ></string>
     <string name="health_msg">Health ></string>
+    <string name="type_sel_error"><![CDATA[Please select <= 2 Types]]></string>
 </resources>

@@ -1,11 +1,14 @@
 package com.example.mdb_pokedex_app;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -21,6 +24,8 @@ public class ListActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     Adapter adapter;
+    Button switchView;
+    int spanCount = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +33,7 @@ public class ListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list);
 
         recyclerView = findViewById(R.id.recyclerView);
+        switchView = findViewById(R.id.switch_view);
 
         int atk = 0, def = 0, hp = 0;
         String[] poke_types = getIntent().getStringArrayExtra("poke_types");
@@ -78,7 +84,20 @@ public class ListActivity extends AppCompatActivity {
 
         }
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        switchView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (spanCount == 1) {
+                    spanCount = 2;
+                } else {
+                    spanCount = 1;
+                }
+                recyclerView.setLayoutManager(new GridLayoutManager(v.getContext(), spanCount));
+            }
+        });
+
+        recyclerView.setLayoutManager(new GridLayoutManager(this, spanCount));
         adapter = new Adapter(this, pokeNames);
         recyclerView.setAdapter(adapter);
 

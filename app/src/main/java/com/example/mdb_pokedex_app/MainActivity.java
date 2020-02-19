@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (chipsCheckCount > 2) {
                     System.out.println(chipsCheckCount);
-                    Toast toast = Toast.makeText(MainActivity.this,"Please select <= 2 Types", Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(MainActivity.this, R.string.type_sel_error, Toast.LENGTH_SHORT);
                     toast.show();
                 } else {
                     int i = 0;
